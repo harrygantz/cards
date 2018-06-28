@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Assembly-CSharp.csproj", "{8E445B81-B8AE-8E4C-45B0-4F237C9A10A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{8E445B81-B8AE-8E4C-45B0-4F237C9A10A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cards", "Assembly-CSharp-Editor.csproj", "{3EB15245-3FDE-CF9F-6787-D1D1BA7652EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{3EB15245-3FDE-CF9F-6787-D1D1BA7652EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

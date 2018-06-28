@@ -1,13 +1,263 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b6ea2a27-add4-460b-abce-4c2448dadc0f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cards/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cards/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cards/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cards/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardBlue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardGreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardGreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardLtBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardLtBlue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardOrange.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardOrange.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardPink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardPink.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardPurple.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardPurple.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardRed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardRed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CardWhite.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CardWhite.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Prototype.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cards.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Cards.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/CrashedAssetImports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/EditorInstance.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorInstance.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler3.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler4.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler5.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler6.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler6.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" beforeDir="false" afterPath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="StackManager.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/StackManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1220">
+              <caret line="264" selection-start-line="264" selection-end-line="264" />
+              <folding>
+                <marker date="1530217329818" expanded="true" signature="6:135" ph="..." />
+                <marker date="1530217329818" expanded="true" signature="178:8096" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="938:1192" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="1054:1131" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="1212:1658" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="1260:1515" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="1299:1432" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="1449:1504" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="1680:2317" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="2339:6322" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="2430:4333" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="2556:3495" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="3512:4323" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="3577:4181" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="4346:6295" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="4472:5458" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="5475:6285" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="5540:6144" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="6343:6782" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="6855:7089" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="7120:7476" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="7323:7437" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="7529:7729" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="7749:7952" ph="{...}" />
+                <marker date="1530217329818" expanded="true" signature="8001:8093" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/GlowEffect.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StackManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Shaders/GlowEffect.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StackManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="240" />
     <option name="y" value="48" />
     <option name="width" value="1200" />
     <option name="height" value="837" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Cards" type="483dac07:UnityExplorerNode$Root" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6ea2a27-add4-460b-abce-4c2448dadc0f" name="Default" comment="" />
+      <created>1530202013305</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1530202013305</updated>
+      <workItem from="1530202018232" duration="7366000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="7366000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="240" y="48" width="1200" height="837" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="NuGet" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24956822" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Shaders/GlowEffect.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/StackManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="264" selection-start-line="264" selection-end-line="264" />
+          <folding>
+            <marker date="1530217329818" expanded="true" signature="6:135" ph="..." />
+            <marker date="1530217329818" expanded="true" signature="178:8096" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="938:1192" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="1054:1131" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="1212:1658" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="1260:1515" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="1299:1432" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="1449:1504" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="1680:2317" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="2339:6322" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="2430:4333" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="2556:3495" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="3512:4323" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="3577:4181" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="4346:6295" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="4472:5458" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="5475:6285" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="5540:6144" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="6343:6782" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="6855:7089" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="7120:7476" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="7323:7437" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="7529:7729" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="7749:7952" ph="{...}" />
+            <marker date="1530217329818" expanded="true" signature="8001:8093" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
