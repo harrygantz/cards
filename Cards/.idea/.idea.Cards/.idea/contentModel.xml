@@ -168,7 +168,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="DeckManager.cs" t="Include" />
+          <e p="MovingObject.cs" t="Include" />
           <e p="StackManager.cs" t="Include" />
+          <e p="Tutorial.cs" t="Include" />
         </e>
         <e p="Shaders" t="Include">
           <e p="GlowEffect.shader" t="Include" />
