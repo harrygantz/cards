@@ -6,7 +6,13 @@ public class Card : MonoBehaviour
 	public string TexturePath { get; set; }
 	
 	public string SourceAssetBundlePath { get; set; }
-	
+
+	public Texture mTexture { get; set; }
+
+	private void Awake(){
+		this.tag = "card";	
+	}
+
 	public Transform TargetTransform 
 	{ 
 		get 
@@ -25,13 +31,13 @@ public class Card : MonoBehaviour
     
 	public CardSlot ParentCardSlot { get; set; }
 	
-	public int FaceValue { get; set; }
+	public string FaceValue { get; set; }
     
-	private float _positionDamp = .2f;
+	private float _positionDamp = .05f;
 
-	private float _rotationDamp = .2f;   
+	private float _rotationDamp = .05f;   
 	
-	private void Update()
+	private void FixedUpdate()
 	{
 		SmoothToTargetPositionRotation();
 	}
@@ -52,7 +58,8 @@ public class Card : MonoBehaviour
     
 	private void SmoothToPointAndDirection(Vector3 point, float moveSmooth, Quaternion rotation, float rotSmooth)
 	{
-		transform.position = Vector3.SmoothDamp(transform.position, point, ref _smoothVelocity, moveSmooth);	
+		//transform.position = Vector3.SmoothDamp(transform.position, point, ref _smoothVelocity, moveSmooth);	
+		transform.position = Vector3.Lerp( transform.position, point, 1 - Mathf.Exp( -1 * Time.deltaTime )  );
 		Quaternion newRotation;
 		newRotation.x = Mathf.SmoothDamp(transform.rotation.x, rotation.x, ref _smoothRotationVelocity.x, rotSmooth); 
 		newRotation.y = Mathf.SmoothDamp(transform.rotation.y, rotation.y, ref _smoothRotationVelocity.y, rotSmooth); 
@@ -61,8 +68,8 @@ public class Card : MonoBehaviour
 		transform.rotation = newRotation;	
 		TestVisibility();					     
 	}	
-	private Vector3 _smoothVelocity;
-	private Vector4 _smoothRotationVelocity;	
+	//private Vector3 _smoothVelocity  = Vector3.zero;
+	private Vector4 _smoothRotationVelocity = Vector4.zero;	
     
 	private void TestVisibility()
 	{
@@ -79,8 +86,13 @@ public class Card : MonoBehaviour
 
 	private void FrontBecameVisible()
 	{
+		
 		AssetBundle cardBundle = BundleSingleton.Instance.LoadBundle(SourceAssetBundlePath);
-		GetComponent<Renderer>().material.mainTexture = (Texture)cardBundle.LoadAsset(TexturePath);
+
+
+
+		GetComponent<Renderer>().material.mainTexture = cardBundle.LoadAsset<Texture>(TexturePath);
+
 	}
 	
 	private void FrontBecameHidden()

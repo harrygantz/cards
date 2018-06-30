@@ -11,25 +11,24 @@ public class CardSlot : MonoBehaviour
 
 	[Range(0.05f, 0.3f)]
 	[SerializeField]
-	private float _positionDamp = .2f;
+	private float _positionDamp = .05f;
 
 	[Range(0.05f, 0.3f)]
 	[SerializeField] 
-	private float _rotationDamp = .2f;   
+	private float _rotationDamp = .05f;   
 	
 	private void Awake()
 	{
 		GetComponent<MeshRenderer>().enabled = false;
 	}
-	
-	public int FaceValue()
+
+	public string FaceValue()
 	{
-		int collectiveFaceValue = 0;
-		for (int i = 0; i < CardList.Count; ++i)
-		{
-			collectiveFaceValue += CardList[ i ].FaceValue;
+		if(TopCard() != null)
+			return TopCard().FaceValue;
+		else {
+			return " ";
 		}
-		return collectiveFaceValue;
 	}
     
 	public Card TopCard()
@@ -67,7 +66,7 @@ public class CardSlot : MonoBehaviour
 			card.ParentCardSlot = this;
 			CardList.Add(card);
 			card.TargetTransform.rotation = transform.rotation;
-			card.TargetTransform.Rotate(card.TargetTransform.forward, Random.Range(-.4f, .4f), Space.Self);
+			card.TargetTransform.Rotate(card.TargetTransform.forward  * Time.deltaTime, Random.Range(-.4f, .4f), Space.Self);
 			float cardHeight = card.GetComponent<BoxCollider>().size.z;
 			card.TargetTransform.position = transform.position;
 			if (_inverseStack)
