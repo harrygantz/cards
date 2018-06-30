@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/CardFramework/AssetBundles/Scenes/ShuffleBasicDeck.unity
+  isLoaded: 1
+  isActive: 1
