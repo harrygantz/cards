@@ -43,9 +43,12 @@ public class Dealer : MonoBehaviour
 	private CardSlot _prior3CardSlot;
 
 	[SerializeField]
-	private CardSlot _prior4CardSlot;																																								
+	private CardSlot _prior4CardSlot;
 
-	private const float CardStackDelay = .01f;
+	[SerializeField]
+	private CardSlot _prior5CardSlot;
+
+	private const float CardStackDelay = .001f;
 	
 	/// <summary>
 	/// Counter which keeps track current dealing movements in progress.
@@ -54,7 +57,8 @@ public class Dealer : MonoBehaviour
 
 	private void Awake()
 	{
-		_cardDeck.InstanatiateDeck("cards");
+		_cardDeck.InstanatiateDeck("tarotbasic");
+		//_cardDeck.InstanatiateDeck("cards");
 		StartCoroutine(StackCardRangeOnSlot(0, _cardDeck.CardList.Count, _stackCardSlot));
 	}
     
@@ -93,20 +97,21 @@ public class Dealer : MonoBehaviour
 		MoveCardSlotToCardSlot(_prior2CardSlot, _pickupCardSlot);		
 		MoveCardSlotToCardSlot(_prior3CardSlot, _pickupCardSlot);	
 		MoveCardSlotToCardSlot(_prior4CardSlot, _pickupCardSlot);	
+		MoveCardSlotToCardSlot(_prior5CardSlot, _pickupCardSlot);	
 		MoveCardSlotToCardSlot(_discardStackCardSlot, _pickupCardSlot);
 		MoveCardSlotToCardSlot(_currentCardSlot, _pickupCardSlot);			
-		yield return new WaitForSeconds(.4f);	
+		yield return new WaitForSeconds(.01f);	
 		int halfLength = _cardDeck.CardList.Count / 2;
 		for (int i = 0; i < halfLength; ++i)
 		{
 			_leftHandCardSlot.AddCard(_pickupCardSlot.TopCard());
 		}
-		yield return new WaitForSeconds(.2f);	
+		yield return new WaitForSeconds(.01f);	
 		for (int i = 0; i < halfLength; ++i)
 		{
 			_rightHandCardSlot.AddCard(_pickupCardSlot.TopCard());
 		}
-		yield return new WaitForSeconds(.2f);	
+		yield return new WaitForSeconds(.01f);	
 		for (int i = 0; i < _cardDeck.CardList.Count; ++i)
 		{
 			if (i % 2 == 0)
@@ -119,6 +124,30 @@ public class Dealer : MonoBehaviour
 			}
 			yield return new WaitForSeconds(CardStackDelay);
 		}
+		yield return new WaitForSeconds(.01f);
+		for (int i = 0; i < halfLength; ++i)
+		{
+			_leftHandCardSlot.AddCard(_stackCardSlot.TopCard());
+		}
+		yield return new WaitForSeconds(.01f);	
+		for (int i = 0; i < halfLength; ++i)
+		{
+			_rightHandCardSlot.AddCard(_stackCardSlot.TopCard());
+		}
+
+		yield return new WaitForSeconds(.01f);
+		for (int i = 0; i < halfLength; ++i)
+		{
+			_stackCardSlot.AddCard(_leftHandCardSlot.TopCard());
+			yield return new WaitForSeconds(CardStackDelay);
+		}
+		yield return new WaitForSeconds(.01f);
+		for (int i = 0; i < halfLength; ++i)
+		{
+			_stackCardSlot.AddCard(_rightHandCardSlot.TopCard());
+			yield return new WaitForSeconds(CardStackDelay);
+		}
+
 		DealInProgress--;
     }
 
@@ -126,11 +155,15 @@ public class Dealer : MonoBehaviour
 	{
 		DealInProgress++;
 		
-		if (_discardHoverStackCardSlot.AddCard(_prior4CardSlot.TopCard()))
+		if (_discardHoverStackCardSlot.AddCard(_prior5CardSlot.TopCard()))
 		{	
 			yield return new WaitForSeconds(CardStackDelay);	
 		}	
 		if (_discardStackCardSlot.AddCard(_discardHoverStackCardSlot.TopCard()))
+		{
+			yield return new WaitForSeconds(CardStackDelay);
+		}
+		if (_prior5CardSlot.AddCard(_prior4CardSlot.TopCard()))
 		{
 			yield return new WaitForSeconds(CardStackDelay);
 		}
@@ -156,13 +189,14 @@ public class Dealer : MonoBehaviour
 		}		
 		_currentCardSlot.AddCard(_stackCardSlot.TopCard());	
 		
-		int collectiveFaceValue = _prior0CardSlot.FaceValue();
-		collectiveFaceValue += _prior1CardSlot.FaceValue();
-		collectiveFaceValue += _prior2CardSlot.FaceValue();
-		collectiveFaceValue += _prior3CardSlot.FaceValue();
-		collectiveFaceValue += _prior4CardSlot.FaceValue();
-		collectiveFaceValue += _currentCardSlot.FaceValue();	
-		DealerUIInstance.FaceValueText.text = collectiveFaceValue.ToString();
+//		int collectiveFaceValue = _prior0CardSlot.FaceValue();
+//		collectiveFaceValue += _prior1CardSlot.FaceValue();
+//		collectiveFaceValue += _prior2CardSlot.FaceValue();
+//		collectiveFaceValue += _prior3CardSlot.FaceValue();
+//		collectiveFaceValue += _prior4CardSlot.FaceValue();
+//		collectiveFaceValue += _prior5CardSlot.FaceValue();
+//		collectiveFaceValue += _currentCardSlot.FaceValue();	
+//		DealerUIInstance.FaceValueText.text = collectiveFaceValue.ToString();
 		
 		DealInProgress--;
 	}	

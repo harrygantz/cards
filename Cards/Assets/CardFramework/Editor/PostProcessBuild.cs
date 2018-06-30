@@ -17,19 +17,26 @@ public class PostProcessBuild
 	[PostProcessBuild]
 	static public void Process(BuildTarget target, string pathToBuiltProject) 
 	{
-		if (target == BuildTarget.iOS)
-		{
-			DirectoryCopy(DirectoryUtility.ExternalAssets(), pathToBuiltProject + "/Data/ExternalAssets", true);
-		}
-		else if (target == BuildTarget.StandaloneOSXIntel || target == BuildTarget.StandaloneOSXIntel64 || target == BuildTarget.StandaloneOSXUniversal)
-		{
-			DirectoryCopy(DirectoryUtility.ExternalAssets(), pathToBuiltProject + "/Contents/ExternalAssets", true);
-		}	
-		else if (target == BuildTarget.StandaloneWindows || target == BuildTarget.StandaloneWindows64)
-		{
-			string dataFolder = System.IO.Path.GetFileNameWithoutExtension(pathToBuiltProject) + "_Data";
-			DirectoryCopy(DirectoryUtility.ExternalAssets(), pathToBuiltProject + "/../" + dataFolder + "/ExternalAssets", true);
-		}
+//		if (target == BuildTarget.iOS)
+//		{
+//			DirectoryCopy(DirectoryUtility.ExternalAssets(), pathToBuiltProject + "/Data/ExternalAssets", true);
+//		}	
+//		else if (target == BuildTarget.StandaloneWindows || target == BuildTarget.StandaloneWindows64)
+//		{
+//			string dataFolder = System.IO.Path.GetFileNameWithoutExtension(pathToBuiltProject) + "_Data";
+//			DirectoryCopy(DirectoryUtility.ExternalAssets(), pathToBuiltProject + "/../" + dataFolder + "/ExternalAssets", true);
+//		}
+//		else if (target == BuildTarget.StandaloneOSXIntel || target == BuildTarget.StandaloneOSXIntel64 || target == BuildTarget.StandaloneOSXUniversal)
+//		{
+//			DirectoryCopy(DirectoryUtility.ExternalAssets(), pathToBuiltProject + "/Contents/ExternalAssets", true);
+//		}
+//		else //if (target == BuildTarget.StandaloneOSXIntel || target == BuildTarget.StandaloneOSXIntel64 || target == BuildTarget.StandaloneOSXUniversal)
+//		{
+//			//DirectoryCopy(DirectoryUtility.ExternalAssets(), pathToBuiltProject , true);
+//			DirectoryCopy(DirectoryUtility.ExternalAssets(), Application.streamingAssetsPath , true);
+//		}
+
+		DirectoryCopy(DirectoryUtility.ExternalAssets(), Application.streamingAssetsPath , true);
 	}
 	
 	static public void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
