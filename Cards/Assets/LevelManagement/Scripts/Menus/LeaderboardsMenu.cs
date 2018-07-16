@@ -6,10 +6,10 @@ namespace LevelManagement
 {
     public class LeaderboardsMenu : Menu<LeaderboardsMenu> 
     {
-        public override void OnBackPress()
+        public override void OnBackPressed()
         {
             // Can add some extra logic here
-            base.OnBackPress();
+            base.OnBackPressed();
             // or add extra logic here
         }
     }

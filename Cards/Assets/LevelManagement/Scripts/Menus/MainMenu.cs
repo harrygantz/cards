@@ -13,25 +13,21 @@ namespace LevelManagement
 			{
 				GameManager.Instance.LoadNextLevel();
 			}
+
+			GameMenu.Open();
 		}
 
 		public void OnSettingsPressed()
 		{
-			if (MenuManager.Instance != null && SettingsMenu.Instance != null)
-			{
-				MenuManager.Instance.OpenMenu(SettingsMenu.Instance);
-			}
+			SettingsMenu.Open();
 		}
 
 		public void OnLeaderboardPressed()
 		{ 
-			if (MenuManager.Instance != null && LeaderboardsMenu.Instance != null)
-			{
-				MenuManager.Instance.OpenMenu(LeaderboardsMenu.Instance);
-			}
+			LeaderboardsMenu.Open();
 		}
 
-		public override void OnBackPress()
+		public override void OnBackPressed()
 		{
 			//base.OnBackPress();
 			Application.Quit();

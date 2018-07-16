@@ -5,6 +5,7 @@ using DEAL;
 
 namespace LevelManagement
 {
+    //Here we are using the curiously recurring template pattern: https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern
     public abstract class Menu<T> : Menu where T : Menu<T>
     {
         private static T _instance;
@@ -23,6 +24,11 @@ namespace LevelManagement
             }
         }
 
+        public static void Open()
+        {
+            if (MenuManager.Instance != null && Instance != null)
+                MenuManager.Instance.OpenMenu(Instance);
+        }
         protected virtual void OnDestroy()
         {
                 _instance = null;
@@ -32,7 +38,7 @@ namespace LevelManagement
     [RequireComponent(typeof(Canvas))]
     public abstract class Menu : MonoBehaviour 
     { 
-        public virtual void OnBackPress()
+        public virtual void OnBackPressed()
         { 
             if (MenuManager.Instance != null)
             {

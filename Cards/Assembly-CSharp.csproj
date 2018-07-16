@@ -57,7 +57,9 @@
     <Compile Include="Assets\LevelManagement\Scripts\MenuManager.cs" />
     <Compile Include="Assets\LevelManagement\Scripts\Menus\LeaderboardsMenu.cs" />
     <Compile Include="Assets\LevelManagement\Scripts\Menus\MainMenu.cs" />
+    <Compile Include="Assets\LevelManagement\Scripts\Menus\PauseMenu.cs" />
     <Compile Include="Assets\LevelManagement\Scripts\Menus\SettingsMenu.cs" />
+    <Compile Include="Assets\LevelManagement\Scripts\Menus\WinScreen.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\DeckManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GameMenu.cs" />
     <Compile Include="Assets\Scripts\MovingObject.cs" />
     <Compile Include="Assets\Scripts\Objective.cs" />
     <Compile Include="Assets\Scripts\StackManager.cs" />

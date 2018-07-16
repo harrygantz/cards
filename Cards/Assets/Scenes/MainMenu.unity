@@ -173,7 +173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601767262
 GameObject:
@@ -243,7 +243,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 601767263}
-  - {fileID: 2034945169}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -354,8 +353,8 @@ Transform:
   m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1056242147}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2034945170
 MonoBehaviour:
@@ -372,6 +371,10 @@ MonoBehaviour:
     type: 2}
   settingsMenuPrefab: {fileID: 114861267663300984, guid: 5e3ed95fb56dd453fa7c9f6065311455,
     type: 2}
-  LeaderboardMenuPrefab: {fileID: 114708369583581672, guid: 8e62e12cbb07243e59c2bc99b3abc5f2,
+  LeaderboardMenuPrefab: {fileID: 114191632847882710, guid: 8e62e12cbb07243e59c2bc99b3abc5f2,
+    type: 2}
+  GameMenuPrefab: {fileID: 114648464821939430, guid: 3c495028af51f4bcba495583e367c393,
+    type: 2}
+  PauseMenuPrefab: {fileID: 114006180111295342, guid: 14af60fd316f444bc9be223551f3cffa,
     type: 2}
   _menuParent: {fileID: 0}

@@ -5,6 +5,18 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="LevelManagement" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Menu.cs" t="Include" />
+            <e p="MenuManager.cs" t="Include" />
+            <e p="Menus" t="Include">
+              <e p="LeaderboardsMenu.cs" t="Include" />
+              <e p="MainMenu.cs" t="Include" />
+              <e p="PauseMenu.cs" t="Include" />
+              <e p="SettingsMenu.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="PostProcessing" t="Include">
           <e p="Editor" t="Include">
             <e p="Attributes" t="Include">
@@ -170,6 +182,7 @@
         <e p="Scripts" t="Include">
           <e p="DeckManager.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="GameMenu.cs" t="Include" />
           <e p="MovingObject.cs" t="Include" />
           <e p="Objective.cs" t="Include" />
           <e p="StackManager.cs" t="Include" />
