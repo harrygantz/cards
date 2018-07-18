@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using LevelManagement;
 
 namespace DEAL
 {
@@ -13,15 +14,14 @@ namespace DEAL
         // reference to objective
         private Objective _objective;
         
-        [SerializeField]
-        private string _nextLevelName;
+        private static GameManager _instance;
+        public static GameManager Instance { get { return _instance; } }
         
         [SerializeField]
-        private int _nextLevelIndex;
-
-        private static GameManager _instance;
-
-        public static GameManager Instance { get { return _instance; } }
+        private TransitionFader _endTransitionPrefab;
+        
+        [SerializeField]
+        private float _endDelay = 0.5f;
 
         // initialize references
         private void Awake()
@@ -51,13 +51,26 @@ namespace DEAL
             // When the endgame condtion has been met we will give the player a few options:
             //    - We can restart the level right away. 
             //    - If the player has been unsucessful x amount of times give them an "out".
-            //    - 
+
             // check if we have set IsGameOver to true, only run this logic once
-           
-               //Level Loading
-               //LoadLevel(_nextLevelIndex);
-               //LoadNextLevel();
-            
+            if (!_isGameOver)
+            {
+                _isGameOver = true;
+                
+                // Play some effect to congradulate the player
+                
+                // Because we have a screen transition this means we need to set up a transtion manually in each level
+                // so if we have a bunch of short levels this may be obnoxious. If that ends up being the case we can
+                // refactor the way we handle transitions here.
+                StartCoroutine(WinRoutine());
+            }   
+        }
+
+        private IEnumerator WinRoutine()
+        {
+            TransitionFader.PlayTransition(_endTransitionPrefab);
+            yield return new WaitForSeconds(_endDelay);
+            WinScreen.Open();
         }
 
         // check for the end game condition on each frame
@@ -66,48 +79,6 @@ namespace DEAL
             if (_objective != null && _objective.IsComplete)
             {
                 EndLevel();
-            }
-        }
-
-        private void LoadLevel(string levelName)
-        {
-            if (!Application.CanStreamedLevelBeLoaded(levelName))
-            {
-                Debug.LogWarning("GAMEMANAGER LoadLevel Error: Invalad scene name specified!");
-            }
-            else
-            {
-                SceneManager.LoadScene(levelName);
-            }
-        }
-
-        private void LoadLevel(int levelIndex)
-        {
-            if (levelIndex >= 0 && levelIndex < SceneManager.sceneCountInBuildSettings)
-            {
-                SceneManager.LoadScene(levelIndex);
-            }
-            else
-            {
-                Debug.LogWarning("GAMEMANAGER LoadLevel Error: Invalad scene index specified!");
-            }
-        }
-
-        public void ReloadLevel()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-
-        public void LoadNextLevel()
-        {
-            //If the current scene is not last scene in the build index
-            if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings - 1)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-            else
-            {
-                SceneManager.LoadScene(0);
             }
         }
     }

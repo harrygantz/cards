@@ -11,9 +11,11 @@
             <e p="MenuManager.cs" t="Include" />
             <e p="Menus" t="Include">
               <e p="LeaderboardsMenu.cs" t="Include" />
+              <e p="LevelLoader.cs" t="Include" />
               <e p="MainMenu.cs" t="Include" />
               <e p="PauseMenu.cs" t="Include" />
               <e p="SettingsMenu.cs" t="Include" />
+              <e p="WinScreen.cs" t="Include" />
             </e>
           </e>
         </e>

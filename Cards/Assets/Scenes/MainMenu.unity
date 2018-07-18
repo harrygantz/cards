@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9505f0d0bef34960b8c36666c09f20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextLevelName: 
-  _nextLevelIndex: 0
+  _endTransitionPrefab: {fileID: 0}
+  _endDelay: 0.5
 --- !u!1 &1056242146
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,8 +286,8 @@ Camera:
   m_GameObject: {fileID: 1264639566}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -295,7 +295,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 12
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -376,5 +376,7 @@ MonoBehaviour:
   GameMenuPrefab: {fileID: 114648464821939430, guid: 3c495028af51f4bcba495583e367c393,
     type: 2}
   PauseMenuPrefab: {fileID: 114006180111295342, guid: 14af60fd316f444bc9be223551f3cffa,
+    type: 2}
+  WinScreenPrefab: {fileID: 114198223036626322, guid: 6ef24167ea11c4682a4a690d8360d341,
     type: 2}
   _menuParent: {fileID: 0}

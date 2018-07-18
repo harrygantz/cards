@@ -7,13 +7,22 @@ namespace LevelManagement
 {
 	public class MainMenu : Menu<MainMenu>
 	{
+		[SerializeField]
+		private float _playDelay = 0.5f;
+		
+		[SerializeField]
+		private TransitionFader _startTransitionPrefab;
+		
 		public void OnPlayPressed()
 		{
-			if (GameManager.Instance != null)
-			{
-				GameManager.Instance.LoadNextLevel();
-			}
+			StartCoroutine(OnPlayPressedRoutine());
+		}
 
+		private IEnumerator OnPlayPressedRoutine()
+		{
+			TransitionFader.PlayTransition(_startTransitionPrefab);
+			LevelLoader.LoadNextLevel();
+			yield return new WaitForSeconds(_playDelay);
 			GameMenu.Open();
 		}
 

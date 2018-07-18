@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Reflection;
 
 namespace LevelManagement
 {
     public class MenuManager : MonoBehaviour
     {
-        public MainMenu mainMenuPrefab;
-        public SettingsMenu settingsMenuPrefab;
-        public LeaderboardsMenu LeaderboardMenuPrefab;
-        public GameMenu GameMenuPrefab;
-        public PauseMenu PauseMenuPrefab; 
+        [SerializeField]
+        private MainMenu mainMenuPrefab;
+        [SerializeField]
+        private SettingsMenu settingsMenuPrefab;
+        [SerializeField]
+        private LeaderboardsMenu LeaderboardMenuPrefab;
+        [SerializeField]
+        private GameMenu GameMenuPrefab;
+        [SerializeField]
+        private PauseMenu PauseMenuPrefab;
+        [SerializeField]
+        private WinScreen WinScreenPrefab;
 
         [SerializeField]
         private Transform _menuParent;
@@ -53,10 +61,25 @@ namespace LevelManagement
             
             DontDestroyOnLoad(_menuParent.gameObject);
 
-            Menu[] menuPrefabs = {mainMenuPrefab, settingsMenuPrefab, LeaderboardMenuPrefab, GameMenuPrefab, PauseMenuPrefab};
-
-            foreach (Menu prefab in menuPrefabs)
+            // Here we are getting the game manager type and storing it in a reference myType. 
+            System.Type myType = this.GetType();
+            
+            // This is a special enumeration that determines how you search through a reflection. We use BindingFlags.Instance
+            // which initiates our search using nonstatic fields. using the bitwise or operator we also are searching for 
+            // private fields. Finally we also want the fields we specifically have in MenuManager and not from inheritance so
+            // we will all use DeclaredOnly
+            BindingFlags myFlags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.DeclaredOnly;
+            
+            // We are using System.Reflection this namespace helps us get type information at runtime. GetFields() returns
+            // information about each field and returns it using a class called FieldInfo.
+            FieldInfo[] fields = myType.GetFields(myFlags);
+            
+            foreach (FieldInfo field in fields)
             {
+                // Used to locate the prefab object from each field. GetValue() retuns whatever is stored in each field.
+                // For the menu fields this should return a menu prefab game object.
+                Menu prefab = field.GetValue(this) as Menu;
+                
                 if (prefab != null)
                 {
                     Menu menuInstance = Instantiate(prefab, _menuParent);
