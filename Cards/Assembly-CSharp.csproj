@@ -53,6 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\LevelManagement\Scripts\Data\DataManager.cs" />
+    <Compile Include="Assets\LevelManagement\Scripts\Data\JSONSaver.cs" />
+    <Compile Include="Assets\LevelManagement\Scripts\Data\SaveData.cs" />
     <Compile Include="Assets\LevelManagement\Scripts\LevelLoader.cs" />
     <Compile Include="Assets\LevelManagement\Scripts\Menu.cs" />
     <Compile Include="Assets\LevelManagement\Scripts\MenuManager.cs" />
