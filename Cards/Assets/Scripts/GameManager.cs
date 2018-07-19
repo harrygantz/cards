@@ -20,9 +20,6 @@ namespace DEAL
         [SerializeField]
         private TransitionFader _endTransitionPrefab;
         
-        [SerializeField]
-        private float _endDelay = 0.5f;
-
         // initialize references
         private void Awake()
         {
@@ -69,7 +66,13 @@ namespace DEAL
         private IEnumerator WinRoutine()
         {
             TransitionFader.PlayTransition(_endTransitionPrefab);
-            yield return new WaitForSeconds(_endDelay);
+
+            // If we do not account for the time the transition fader is fading then we will get a visual glitch from
+            // the next screen popping into view without a smooth fade transition.
+            float  fadeDelay = (_endTransitionPrefab != null) ? 
+                _endTransitionPrefab.Delay + _endTransitionPrefab.FadeOnDuration : 0f;
+            
+            yield return new WaitForSeconds(fadeDelay);
             WinScreen.Open();
         }
 
