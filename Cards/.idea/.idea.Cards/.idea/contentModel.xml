@@ -7,15 +7,26 @@
       <e p="Assets" t="Include">
         <e p="LevelManagement" t="Include">
           <e p="Scripts" t="Include">
+            <e p="Data" t="Include">
+              <e p="DataManager.cs" t="Include" />
+              <e p="JSONSaver.cs" t="Include" />
+              <e p="SaveData.cs" t="Include" />
+            </e>
+            <e p="LevelLoader.cs" t="Include" />
             <e p="Menu.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
             <e p="Menus" t="Include">
               <e p="LeaderboardsMenu.cs" t="Include" />
-              <e p="LevelLoader.cs" t="Include" />
               <e p="MainMenu.cs" t="Include" />
               <e p="PauseMenu.cs" t="Include" />
               <e p="SettingsMenu.cs" t="Include" />
               <e p="WinScreen.cs" t="Include" />
+            </e>
+            <e p="SplashScreen.cs" t="Include" />
+            <e p="TransitionFader.cs" t="Include" />
+            <e p="Utilities" t="Include">
+              <e p="DontDestroyOnLoad.cs" t="Include" />
+              <e p="ScreenFader.cs" t="Include" />
             </e>
           </e>
         </e>
