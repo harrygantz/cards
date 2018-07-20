@@ -8,17 +8,18 @@ using DEAL.ScriptableObjects;
 public class CardDisplay : MonoBehaviour
 {
 	public Card card;
+	public TextMesh nameText;
+	public TextMesh descriptionText;
+	public Color32 cardColor;
+	public Renderer cardRenderer;
+  
 
-	public Text nameText;
-	public Text descriptionText;
-
-	public Material cardMaterial; 
 	void Start ()
 	{
 		nameText.text = card.name;
 		descriptionText.text = card.description;
-		cardMaterial = GetComponent<Material>();
-		cardMaterial = card.matertial;
+		cardRenderer = gameObject.GetComponent<Renderer>();
+		cardRenderer.material = card.matertial;
 	}
 
 }

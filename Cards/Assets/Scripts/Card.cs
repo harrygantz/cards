@@ -12,7 +12,8 @@ namespace DEAL.ScriptableObjects
         public string description; // used to describe the card
         public int pointValue; // the value the card is worth if swipped successfully
         public Material matertial; //
-        
+        public Color32 color;
+
 
     }
 }
