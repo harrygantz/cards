@@ -5,6 +5,7 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="CardDisplay.cs" t="Include" />
         <e p="LevelManagement" t="Include">
           <e p="Scripts" t="Include">
             <e p="Data" t="Include">
@@ -12,6 +13,7 @@
               <e p="JSONSaver.cs" t="Include" />
               <e p="SaveData.cs" t="Include" />
             </e>
+            <e p="GameMenu.cs" t="Include" />
             <e p="LevelLoader.cs" t="Include" />
             <e p="Menu.cs" t="Include" />
             <e p="MenuManager.cs" t="Include" />
@@ -193,16 +195,17 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Card.cs" t="Include" />
           <e p="DeckManager.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
-          <e p="GameMenu.cs" t="Include" />
           <e p="MovingObject.cs" t="Include" />
           <e p="Objective.cs" t="Include" />
           <e p="StackManager.cs" t="Include" />
-          <e p="SystemIOReference.cs" t="Include" />
           <e p="Tutorial.cs" t="Include" />
         </e>
         <e p="Shaders" t="Include">
+          <e p="3DTextOneSidedShader.shader" t="Include" />
+          <e p="3DTextShader.shader" t="Include" />
           <e p="GlowEffect.shader" t="Include" />
         </e>
       </e>
