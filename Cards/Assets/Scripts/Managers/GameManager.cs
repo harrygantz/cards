@@ -94,7 +94,6 @@ namespace DEAL
         // check for the end game condition on each frame
         private void Update()
         {
-            Debug.Log(points);
             if (_objective != null && _objective.IsComplete)
             {
                 EndLevel();

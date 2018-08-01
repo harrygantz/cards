@@ -44,12 +44,12 @@ namespace DEAL.Tools
         /// Spawns an object at the specified position and determines the next spawn position
         /// </summary>
         /// <param name="spawnPosition">Spawn position.</param>
-        protected virtual void SpawnCard(Vector3 spawnPosition, Quaternion spawnRotation)
+        public void SpawnCard(Vector3 spawnPosition, Quaternion spawnRotation)
         {
             // we spawn a gameobject at the location we've determined previously
             GameObject spawnedObject = Spawn(spawnPosition,spawnRotation,false);
             
-            // if the spawned object is null, we're gonna start again with a fresh spawn next time we get fresh objects.
+            // if the spawned object is null, we're going to start again with a fresh spawn next time we get fresh objects.
             if (spawnedObject==null)
             {
                 _lastSpawnedTransform=null;
@@ -69,7 +69,8 @@ namespace DEAL.Tools
                 spawnedObject.transform.position = transform.position;
             }
             
-            //we tell our object it's now completely spawned
+            // we tell our object it's now completely spawned
+            // we should use events to do this later on. 
             spawnedObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
             foreach (Transform child in spawnedObject.transform)
             {

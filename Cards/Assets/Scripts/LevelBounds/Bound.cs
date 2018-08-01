@@ -33,7 +33,7 @@ public class Bound : MonoBehaviour
             }
             other.gameObject.GetComponent<PoolableObject>().Destroy();
             GameManager.Instance.points += other.gameObject.GetComponent<CardDisplay>().points;
-            _cardSpawner.Spawn(_cardSpawner.transform.position, _cardSpawner.transform.rotation);
+            _cardSpawner.SpawnCard(_cardSpawner.transform.position, _cardSpawner.transform.rotation);
         }
     }
 }

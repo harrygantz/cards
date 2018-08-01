@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GREEN CARD
   - PINK CARD
+  - Clear
   layers:
   - Default
   - TransparentFX
