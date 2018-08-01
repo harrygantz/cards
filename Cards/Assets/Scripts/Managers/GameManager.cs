@@ -1,14 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DEAL.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using LevelManagement;
+using DEAL.LevelManagement;
+using DEAL.Tools;
 
 namespace DEAL
 {
     public class GameManager : MonoBehaviour
-    { 
+    {
+        // This is the rudimentary way to keep track of score for now. In the futre we will want to add xp and other stuff.
+        public int points;
+        
+        // Records the starting game time
+        [SerializeField]
+        private float _startTime;
+        
         private bool _isGameOver;
+        
         public bool IsGameOver { get { return _isGameOver; } }
         
         // reference to objective
@@ -19,6 +29,8 @@ namespace DEAL
         
         [SerializeField]
         private TransitionFader _endTransitionPrefab;
+
+        private DataManager _dataManager;
         
         // initialize references
         private void Awake()
@@ -31,8 +43,11 @@ namespace DEAL
             {
                 _instance = this;
             }
-            _objective = Object.FindObjectOfType<Objective>();
+            _objective = FindObjectOfType<Objective>();
+            _dataManager = FindObjectOfType<DataManager>();
+            LoadPlayerData();
         }
+
 
         private void OnDestroy()
         {
@@ -79,12 +94,23 @@ namespace DEAL
         // check for the end game condition on each frame
         private void Update()
         {
+            Debug.Log(points);
             if (_objective != null && _objective.IsComplete)
             {
                 EndLevel();
             }
         }
-    }
 
-}
+        private void LoadPlayerData()
+        {
+            if (_dataManager != null)
+            {
+                _dataManager.Load();
+                points = _dataManager.Points;
+            } 
+        }
+        
+    }//END GAMEMANAGER
+
+}//END NAMESPACE
     
