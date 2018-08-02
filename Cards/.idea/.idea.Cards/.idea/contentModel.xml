@@ -5,33 +5,6 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="CardDisplay.cs" t="Include" />
-        <e p="LevelManagement" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="Data" t="Include">
-              <e p="DataManager.cs" t="Include" />
-              <e p="JSONSaver.cs" t="Include" />
-              <e p="SaveData.cs" t="Include" />
-            </e>
-            <e p="GameMenu.cs" t="Include" />
-            <e p="LevelLoader.cs" t="Include" />
-            <e p="Menu.cs" t="Include" />
-            <e p="MenuManager.cs" t="Include" />
-            <e p="Menus" t="Include">
-              <e p="LeaderboardsMenu.cs" t="Include" />
-              <e p="MainMenu.cs" t="Include" />
-              <e p="PauseMenu.cs" t="Include" />
-              <e p="SettingsMenu.cs" t="Include" />
-              <e p="WinScreen.cs" t="Include" />
-            </e>
-            <e p="SplashScreen.cs" t="Include" />
-            <e p="TransitionFader.cs" t="Include" />
-            <e p="Utilities" t="Include">
-              <e p="DontDestroyOnLoad.cs" t="Include" />
-              <e p="ScreenFader.cs" t="Include" />
-            </e>
-          </e>
-        </e>
         <e p="PostProcessing" t="Include">
           <e p="Editor" t="Include">
             <e p="Attributes" t="Include">
@@ -195,12 +168,38 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Card.cs" t="Include" />
-          <e p="CardSpawner.cs" t="Include" />
+          <e p="cards" t="Include">
+            <e p="Card.cs" t="Include" />
+            <e p="CardDisplay.cs" t="Include" />
+          </e>
+          <e p="Data" t="Include">
+            <e p="DataManager.cs" t="Include" />
+            <e p="JSONSaver.cs" t="Include" />
+            <e p="SaveData.cs" t="Include" />
+          </e>
+          <e p="LevelBounds" t="Include">
+            <e p="Bound.cs" t="Include" />
+            <e p="LevelBounds.cs" t="Include" />
+          </e>
+          <e p="LevelManagment" t="Include">
+            <e p="GameMenu.cs" t="Include" />
+            <e p="LevelLoader.cs" t="Include" />
+            <e p="Menu.cs" t="Include" />
+            <e p="MenuManager.cs" t="Include" />
+            <e p="SplashScreen.cs" t="Include" />
+            <e p="TransitionFader.cs" t="Include" />
+          </e>
           <e p="Managers" t="Include">
-            <e p="DeckManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
+            <e p="LevelManager.cs" t="Include" />
             <e p="StackManager.cs" t="Include" />
+          </e>
+          <e p="Menus" t="Include">
+            <e p="LeaderboardsMenu.cs" t="Include" />
+            <e p="MainMenu.cs" t="Include" />
+            <e p="PauseMenu.cs" t="Include" />
+            <e p="SettingsMenu.cs" t="Include" />
+            <e p="WinScreen.cs" t="Include" />
           </e>
           <e p="Objective.cs" t="Include" />
           <e p="Sample Shit" t="Include">
@@ -208,10 +207,18 @@
             <e p="Tutorial.cs" t="Include" />
           </e>
           <e p="Tools" t="Include">
-            <e p="IPooledObject.cs" t="Include" />
+            <e p="CardSpawner.cs" t="Include" />
             <e p="Lists.cs" t="Include" />
             <e p="MultipleObjectPooler.cs" t="Include" />
+            <e p="ObjectBounds.cs" t="Include" />
             <e p="ObjectPoolerBase.cs" t="Include" />
+            <e p="PoolableObject.cs" t="Include" />
+            <e p="ReactivateOnSpawn.cs" t="Include" />
+            <e p="Spawner.cs" t="Include" />
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="DontDestroyOnLoad.cs" t="Include" />
+            <e p="ScreenFader.cs" t="Include" />
           </e>
         </e>
         <e p="Shaders" t="Include">

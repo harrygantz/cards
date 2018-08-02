@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DEAL.Tools;
 
-namespace DEAL
+namespace DEAL.Tools
 {
     [RequireComponent (typeof (ObjectPoolerBase))]
     public class Spawner : MonoBehaviour 

@@ -494,6 +494,7 @@ MonoBehaviour:
   spawning: 1
   initialDelay: 0
   _cardCount: 0
+  _initalizedCardCount: 4
 --- !u!114 &581897128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,7 +516,7 @@ MonoBehaviour:
     Enabled: 1
   - GameObjectToPool: {fileID: 1589564186927808, guid: e7366988b4bb349038a26fd02338cb28,
       type: 2}
-    PoolSize: 15
+    PoolSize: 10
     PoolCanExpand: 0
     Enabled: 1
   PoolingMethod: 3
