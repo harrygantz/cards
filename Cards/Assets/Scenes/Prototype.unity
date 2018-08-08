@@ -494,7 +494,8 @@ MonoBehaviour:
   spawning: 1
   initialDelay: 0
   _cardCount: 0
-  _initalizedCardCount: 4
+  _initalizedCardCount: 5
+  runOnce: 1
 --- !u!114 &581897128
 MonoBehaviour:
   m_ObjectHideFlags: 0

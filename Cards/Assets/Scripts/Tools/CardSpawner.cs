@@ -14,8 +14,11 @@ namespace DEAL.Tools
         private int _cardCount;
 
         [SerializeField] 
-        public int _initalizedCardCount = 5;
+        private int _initalizedCardCount = 5;
 
+        /// Initialize the stack that will hold all the cards in the deck
+        public static Stack<GameObject> deck = new Stack<GameObject>();
+        
         /// <summary>
         /// This is used to keep track of the postitions of the first few cards in the deck
         /// </summary>
@@ -34,6 +37,8 @@ namespace DEAL.Tools
         /// Check to see if the game is just beginning.
         private bool _isStartGame = true;
 
+        public bool runOnce = true;
+
         private void Start()
         {
             /// we get the object pooler component
@@ -41,7 +46,7 @@ namespace DEAL.Tools
             InitalizeDeck(_initalizedCardCount);
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             CheckSpawn();
         }
@@ -49,30 +54,15 @@ namespace DEAL.Tools
         /// <summary>
         /// Initalizes the deck by spawning a predetermined number of cards in a stack.
         /// </summary>
-        private void InitalizeDeck(int numOfCards)
+        public void InitalizeDeck(int numOfCards)
         {
             for (int i = 0; i < numOfCards; i++)
             {
-                if (i == 0)
-                {
-                    SpawnCard( new Vector3(0f,0f,0.0f), Quaternion.identity, i+1);
-                }
-                if (i == 1)
-                {
-                    SpawnCard( new Vector3(0f,0f,0.02f), Quaternion.identity, i+1);
-                }
-                if (i == 2)
-                {
-                    SpawnCard( new Vector3(0f,0f,0.04f), Quaternion.identity, i+1);
-                }
-                if (i == 3)
-                {
-                    SpawnCard( new Vector3(0f,0f,0.06f), Quaternion.identity, i+1);
-                    break; // dont need to finish any more iterations  
-                }
+                    // The cards are being spawned and placed under each other, Roateded in the same direction, and 
+                    // increasing the card count by one each time.
+                    SpawnCard( new Vector3(0f,0f,(0.02f * i)), Quaternion.identity, (i + 1) );
             }
-
-            // Change the start game to false to stop the initializeation process.
+            
             _isStartGame = false;
         }
         
@@ -82,12 +72,32 @@ namespace DEAL.Tools
         private void CheckSpawn()
         {
             
-            // if we haven't spawned anything yet, or if the last spawned transform is inactive, we reset to first spawn.
-            if (!_firstSpawnedTransform.gameObject.activeInHierarchy)
-            {
-                SpawnCard(new Vector3(0f, 0f, 0.1f), Quaternion.identity, _cardCount);
-                _cardCount++;
-                return;
+            // if we haven't spawned anything yet (This shouldn't happen due to initialization), or if the last spawned transform is inactive, we reset to first spawn.
+//            if (!_firstSpawnedTransform.gameObject.activeInHierarchy)
+//            {
+//                SpawnCard(new Vector3(0f, 0f, 0.1f), Quaternion.identity, _cardCount);
+//                _cardCount++;
+//                return;
+//            }
+            
+            // if we've already spawned at least one object, we'll reposition our new object according to that previous one
+            if (!_firstSpawnedTransform.gameObject.activeInHierarchy && runOnce)
+            {   
+                firstSpawnedObject = secondSpawnedObject;
+                firstSpawnedObject.transform.position = new Vector3(0f, 0f, 0.00f);
+                secondSpawnedObject = thirdSpawnedObject;
+                secondSpawnedObject.transform.position = new Vector3(0f, 0f, 0.02f);
+                thirdSpawnedObject = fourthSpawnedObject;
+                thirdSpawnedObject.transform.position = new Vector3(0f, 0f, 0.04f);
+                fourthSpawnedObject = lastSpawnedObject;
+                fourthSpawnedObject.transform.position = new Vector3(0f, 0f, 0.06f);
+                SpawnCard(new Vector3(0f, 0f, 0.08f), Quaternion.identity, _initalizedCardCount);
+                
+                
+               
+               
+               
+                runOnce = false;
             }
         }
 
@@ -99,13 +109,21 @@ namespace DEAL.Tools
         public void SpawnCard(Vector3 spawnPosition, Quaternion spawnRotation, int count)
         {
             // need to save a reference to each game object so we can move them around
-            if (count < 5)
+            if (count < _initalizedCardCount)
             {
                 if (count == 1)
                 {
                     // we spawn a gameobject at the location we've determined previously
                      firstSpawnedObject = Spawn(spawnPosition,spawnRotation,false);
                     _firstSpawnedTransform = firstSpawnedObject.transform;
+                    firstSpawnedObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
+                    foreach (Transform child in firstSpawnedObject.transform)
+                    {
+                        if (child.gameObject.GetComponent<ReactivateOnSpawn>()!=null)
+                        {
+                            child.gameObject.GetComponent<ReactivateOnSpawn>().Reactivate();
+                        }
+                    }
                     _cardCount++;
                 }
                 
@@ -114,6 +132,14 @@ namespace DEAL.Tools
                     // we spawn a gameobject at the location we've determined previously
                      secondSpawnedObject = Spawn(spawnPosition,spawnRotation,false);
                     _secondSpawnedTransform = secondSpawnedObject.transform;
+                    secondSpawnedObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
+                    foreach (Transform child in secondSpawnedObject.transform)
+                    {
+                        if (child.gameObject.GetComponent<ReactivateOnSpawn>()!=null)
+                        {
+                            child.gameObject.GetComponent<ReactivateOnSpawn>().Reactivate();
+                        }
+                    }
                     _cardCount++;
                 }
                 
@@ -122,6 +148,14 @@ namespace DEAL.Tools
                     // we spawn a gameobject at the location we've determined previously
                      thirdSpawnedObject = Spawn(spawnPosition,spawnRotation,false);
                     _thirdSpawnedTransform = thirdSpawnedObject.transform;
+                    thirdSpawnedObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
+                    foreach (Transform child in thirdSpawnedObject.transform)
+                    {
+                        if (child.gameObject.GetComponent<ReactivateOnSpawn>()!=null)
+                        {
+                            child.gameObject.GetComponent<ReactivateOnSpawn>().Reactivate();
+                        }
+                    }
                     _cardCount++;
                 }
                 
@@ -130,6 +164,14 @@ namespace DEAL.Tools
                     // we spawn a gameobject at the location we've determined previously
                     fourthSpawnedObject = Spawn(spawnPosition,spawnRotation,false);
                     _fourthSpawnedTransform = fourthSpawnedObject.transform;
+                    fourthSpawnedObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
+                    foreach (Transform child in fourthSpawnedObject.transform)
+                    {
+                        if (child.gameObject.GetComponent<ReactivateOnSpawn>()!=null)
+                        {
+                            child.gameObject.GetComponent<ReactivateOnSpawn>().Reactivate();
+                        }
+                    }
                     _cardCount++;
                 }
                 
@@ -137,40 +179,12 @@ namespace DEAL.Tools
             }
 
             // we spawn a gameobject at the location we've determined previously
-            lastSpawnedObject = Spawn(new Vector3(0f,0f,0.8f),spawnRotation,false);
+            lastSpawnedObject = Spawn(spawnPosition,spawnRotation,false);
             
             // we need to have a poolableObject component for the distance spawner to work.
             if (lastSpawnedObject.GetComponent<PoolableObject>()==null)
             {
                 throw new Exception(gameObject.name+" is trying to spawn objects that don't have a PoolableObject component.");					
-            }
-            
-            // if we've already spawned at least one object, we'll reposition our new object according to that previous one
-            if (_firstSpawnedTransform != null)
-            {   
-                // we store our new object, which will now be the previously spawned object for our next spawn
-                //swap position of the second card with the first card since the first card has been discarded.
-                firstSpawnedObject = secondSpawnedObject;
-                firstSpawnedObject.transform.position = _firstSpawnedTransform.position;
-                
-                // swap the position of the third card with the second card to bump it up a position.
-                secondSpawnedObject = thirdSpawnedObject;
-                secondSpawnedObject.transform.position = _secondSpawnedTransform.position; 
-                
-                // swap the position of the fourth card with the third cards position moving it up a spot.
-                thirdSpawnedObject = fourthSpawnedObject;
-                thirdSpawnedObject.transform.position = _thirdSpawnedTransform.position;
-            
-                // swap the position of the last card with the fourth card position moving it to the last position in 
-                // the deck
-                fourthSpawnedObject = lastSpawnedObject;
-                fourthSpawnedObject.transform.position = _lastSpawnedTransform.position;
-                
-                lastSpawnedObject = Spawn(new Vector3(0f,0f,0.8f),spawnRotation,false);
-                _cardCount++;
-                // we center our object on the spawner's position
-                lastSpawnedObject.transform.position = new Vector3(0f,0f, .02f * _initalizedCardCount);
-                
             }
             
             // we tell our object it's now completely spawned
@@ -188,7 +202,6 @@ namespace DEAL.Tools
             
             //*** ORIGINAL ***
             _lastSpawnedTransform = lastSpawnedObject.transform;
-            Debug.Log("Card count: " +_cardCount);
         }
     }//ENDCARDSPAWNER
 }//END NAMESPACE

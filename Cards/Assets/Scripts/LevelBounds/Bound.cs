@@ -34,7 +34,7 @@ namespace DEAL.Tools
                 }
                 other.gameObject.GetComponent<PoolableObject>().Destroy();
                 GameManager.Instance.points += other.gameObject.GetComponent<CardDisplay>().points;
-                _cardSpawner.SpawnCard(_cardSpawner.transform.position, _cardSpawner.transform.rotation, 4);
+                _cardSpawner.runOnce = true;
             }
         }
     }
