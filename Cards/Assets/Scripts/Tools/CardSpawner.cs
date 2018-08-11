@@ -29,10 +29,7 @@ namespace DEAL.Tools
         private GameObject lastSpawnedObject;
         
         private Transform _firstSpawnedTransform = null;
-        private Transform _secondSpawnedTransform = null;
-        private Transform _thirdSpawnedTransform = null;
-        private Transform _fourthSpawnedTransform = null;
-        private Transform _lastSpawnedTransform = null; 
+
         
         /// Check to see if the game is just beginning.
         private bool _isStartGame = true;
@@ -71,15 +68,6 @@ namespace DEAL.Tools
         /// </summary>
         private void CheckSpawn()
         {
-            
-            // if we haven't spawned anything yet (This shouldn't happen due to initialization), or if the last spawned transform is inactive, we reset to first spawn.
-//            if (!_firstSpawnedTransform.gameObject.activeInHierarchy)
-//            {
-//                SpawnCard(new Vector3(0f, 0f, 0.1f), Quaternion.identity, _cardCount);
-//                _cardCount++;
-//                return;
-//            }
-            
             // if we've already spawned at least one object, we'll reposition our new object according to that previous one
             if (!_firstSpawnedTransform.gameObject.activeInHierarchy && runOnce)
             {   
@@ -91,11 +79,7 @@ namespace DEAL.Tools
                 thirdSpawnedObject.transform.position = new Vector3(0f, 0f, 0.04f);
                 fourthSpawnedObject = lastSpawnedObject;
                 fourthSpawnedObject.transform.position = new Vector3(0f, 0f, 0.06f);
-                SpawnCard(new Vector3(0f, 0f, 0.08f), Quaternion.identity, _initalizedCardCount);
-                
-                
-               
-               
+                SpawnCard(new Vector3(0f, 0f, 0.08f), Quaternion.identity, _initalizedCardCount); 
                
                 runOnce = false;
             }
@@ -131,7 +115,7 @@ namespace DEAL.Tools
                 {
                     // we spawn a gameobject at the location we've determined previously
                      secondSpawnedObject = Spawn(spawnPosition,spawnRotation,false);
-                    _secondSpawnedTransform = secondSpawnedObject.transform;
+                    
                     secondSpawnedObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
                     foreach (Transform child in secondSpawnedObject.transform)
                     {
@@ -147,7 +131,7 @@ namespace DEAL.Tools
                 {
                     // we spawn a gameobject at the location we've determined previously
                      thirdSpawnedObject = Spawn(spawnPosition,spawnRotation,false);
-                    _thirdSpawnedTransform = thirdSpawnedObject.transform;
+                    
                     thirdSpawnedObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
                     foreach (Transform child in thirdSpawnedObject.transform)
                     {
@@ -163,7 +147,7 @@ namespace DEAL.Tools
                 {
                     // we spawn a gameobject at the location we've determined previously
                     fourthSpawnedObject = Spawn(spawnPosition,spawnRotation,false);
-                    _fourthSpawnedTransform = fourthSpawnedObject.transform;
+                    
                     fourthSpawnedObject.GetComponent<PoolableObject>().TriggerOnSpawnComplete();
                     foreach (Transform child in fourthSpawnedObject.transform)
                     {
@@ -200,8 +184,6 @@ namespace DEAL.Tools
                 }
             }
             
-            //*** ORIGINAL ***
-            _lastSpawnedTransform = lastSpawnedObject.transform;
         }
     }//ENDCARDSPAWNER
 }//END NAMESPACE
